@@ -41,6 +41,7 @@ class Calculator {
 
   compute() {
     let computation;
+    let hasDecimal;
     const previous = parseFloat(this.previousOperand);
     const current = parseFloat(this.currentOperand);
 
@@ -65,7 +66,12 @@ class Calculator {
       default:
         return;
     }
-    this.currentOperand = computation.toFixed(1);
+    hasDecimal = computation - Math.floor(computation) !== 0;
+    if (hasDecimal) {
+      this.currentOperand = computation.toFixed(1);
+    } else {
+      this.currentOperand = computation;
+    }
     this.operation = undefined;
     this.previousOperand = '';
   }
@@ -83,7 +89,10 @@ class Calculator {
   }
 }
 
-const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
+const calculator = new Calculator(
+  previousOperandTextElement,
+  currentOperandTextElement
+);
 
 numberButtons.forEach((button) => {
   button.addEventListener('click', () => {
@@ -115,6 +124,8 @@ deleteButton.addEventListener('click', () => {
 });
 
 window.addEventListener('keydown', (event) => {
-  const keyPressed = document.querySelector(`button[data-key-code='${event.key}']`);
+  const keyPressed = document.querySelector(
+    `button[data-key-code='${event.key}']`
+  );
   keyPressed.click();
 });
