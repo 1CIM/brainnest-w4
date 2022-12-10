@@ -65,7 +65,7 @@ class Calculator {
       default:
         return;
     }
-    this.hasDecimal(computation)
+    this.hasDecimal(computation);
     this.operation = undefined;
     this.previousOperand = '';
   }
@@ -74,9 +74,9 @@ class Calculator {
     let hasDecimal;
     hasDecimal = computation - Math.floor(computation) !== 0;
     if (hasDecimal) {
-     return this.currentOperand = computation.toFixed(1);
+      return this.currentOperand = computation.toFixed(1);
     } else {
-     return this.currentOperand = computation;
+      return this.currentOperand = computation;
     }
   }
 
