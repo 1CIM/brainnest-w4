@@ -1,0 +1,97 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(47, 47, 47);
+  font-size: 62.5%;
+}
+
+header {
+  display: flex;
+  font-size: 1.8rem;
+  color: #ffffffbf;
+  justify-content: center;
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 80vh;
+  grid-template-columns: repeat(4, 6.3rem);
+  grid-template-rows: minmax(7.5rem, auto) repeat(5, 6.3rem);
+}
+
+button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid #ffffff;
+  background-color: #ffffffbf;
+}
+
+button:hover {
+  background-color: #ffffffe6;
+}
+
+.operation {
+  background-color: #9f9f9f;
+}
+
+.operation:hover {
+  background-color: #c9c9c9;
+}
+
+.all-clear {
+  background-color: #446fd3;
+}
+
+.all-clear:hover {
+  background-color: #3b73f3;
+}
+
+.delete {
+  background-color: #a82e2e;
+}
+
+.delete:hover {
+  background-color: #d42323;
+}
+
+.equals {
+  background-color: #077512;
+}
+
+.equals:hover {
+  background-color: #02a112;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: #000000bf;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: .9rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.previous-operand {
+  color: #ffffffbf;
+  font-size: 1rem;
+}
+
+.current-operand {
+  color: #ffffff;
+  font-size: 2.5rem;
+}
