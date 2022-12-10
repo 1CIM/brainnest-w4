@@ -89,10 +89,7 @@ class Calculator {
   }
 }
 
-const calculator = new Calculator(
-  previousOperandTextElement,
-  currentOperandTextElement
-);
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
 
 numberButtons.forEach((button) => {
   button.addEventListener('click', () => {
@@ -124,8 +121,6 @@ deleteButton.addEventListener('click', () => {
 });
 
 window.addEventListener('keydown', (event) => {
-  const keyPressed = document.querySelector(
-    `button[data-key-code='${event.key}']`
-  );
+  const keyPressed = document.querySelector(`button[data-key-code='${event.key}']`);
   keyPressed.click();
 });
