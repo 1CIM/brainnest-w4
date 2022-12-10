@@ -7,14 +7,14 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: rgb(47, 47, 47);
+  background-color: #2f2f2f;
   font-size: 62.5%;
 }
 
 header {
   display: flex;
   font-size: 1.8rem;
-  color: #ffffffbf;
+  color: #e5e5e5;
   justify-content: center;
 }
 
@@ -31,11 +31,11 @@ button {
   cursor: pointer;
   font-size: 2rem;
   border: 1px solid #ffffff;
-  background-color: #ffffffbf;
+  background-color: #d3d1d1;
 }
 
 button:hover {
-  background-color: #ffffffe6;
+  background-color: #e8e8e8;
 }
 
 .operation {
@@ -76,7 +76,7 @@ button:hover {
 
 .output {
   grid-column: 1 / -1;
-  background-color: #000000bf;
+  background-color: #060606;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
@@ -87,8 +87,8 @@ button:hover {
 }
 
 .previous-operand {
-  color: #ffffffbf;
-  font-size: 1rem;
+  color: #d2d2d2;
+  font-size: 1.2rem;
 }
 
 .current-operand {
