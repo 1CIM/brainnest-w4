@@ -32,16 +32,15 @@ class Calculator {
   chooseOperation(operation) {
     if (this.currentOperand === '') return;
     if (this.previousOperand !== '') {
-      this.compute();
+      this.calculate();
     }
     this.operation = operation;
     this.previousOperand = this.currentOperand;
     this.currentOperand = '';
   }
 
-  compute() {
+  calculate() {
     let computation;
-    let hasDecimal;
     const previous = parseFloat(this.previousOperand);
     const current = parseFloat(this.currentOperand);
 
@@ -66,14 +65,19 @@ class Calculator {
       default:
         return;
     }
-    hasDecimal = computation - Math.floor(computation) !== 0;
-    if (hasDecimal) {
-      this.currentOperand = computation.toFixed(1);
-    } else {
-      this.currentOperand = computation;
-    }
+    this.hasDecimal(computation)
     this.operation = undefined;
     this.previousOperand = '';
+  }
+
+  hasDecimal(computation) {
+    let hasDecimal;
+    hasDecimal = computation - Math.floor(computation) !== 0;
+    if (hasDecimal) {
+     return this.currentOperand = computation.toFixed(1);
+    } else {
+     return this.currentOperand = computation;
+    }
   }
 
   updateDisplay() {
@@ -106,7 +110,7 @@ operationButtons.forEach((button) => {
 });
 
 equalsButton.addEventListener('click', () => {
-  calculator.compute();
+  calculator.calculate();
   calculator.updateDisplay();
 });
 
